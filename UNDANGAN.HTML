@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan - Azmi & Ulfa</title>
+  
+  <!-- Font Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #8a735c;
+      --accent: #d4af37;
+      --bg-light: #fbf9f6;
+      --text-dark: #333333;
+      --text-muted: #666666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                  url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+
+    .hero sub-title {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .names {
+      font-family: 'Alex Brush', cursive;
+      font-size: 4rem;
+      color: var(--primary);
+      margin: 1rem 0;
+    }
+
+    .date-badge {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      padding: 8px 16px;
+      border-top: 1px solid var(--primary);
+      border-bottom: 1px solid var(--primary);
+      margin-top: 1rem;
+    }
+
+    /* Section Global */
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Alex Brush', cursive;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Couple Section */
+    .couple-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 600px) {
+      .couple-container {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+
+    .person {
+      flex: 1;
+    }
+
+    .person-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    .parents {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .ampersand {
+      font-family: 'Alex Brush', cursive;
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    /* Countdown Section */
+    .timer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 2rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .timer-box {
+      background-color: #ffffff;
+      padding: 1rem 0.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .timer-box span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .timer-box label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Event Cards */
+    .event-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    .event-card h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 10px 24px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #705b47;
+    }
+
+    /* Form RSVP & Ucapan */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+      margin-top: 1.5rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background-color: #f2eee9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <p class="section-title">The Wedding Of</p>
+    <h1 class="names">Azmi & Ulfa</h1>
+    <p>Kami mengundang Anda untuk berbagi kebahagiaan bersama kami</p>
+    <div class="date-badge">12 FEBRUARI 2027</div>
+  </header>
+
+  <!-- COUPLE SECTION -->
+  <section>
+    <p class="section-title">Mempelai</p>
+    <h2>Pasangan Bahagia</h2>
+    
+    <div class="couple-container">
+      <div class="person">
+        <div class="person-name">Taufik Azmi</div>
+        <p class="parents">Putra dari Almarhum Bapak Saifudin<br> & Ibu Titiek Tjaturweni</p>
+      </div>
+
+      <div class="ampersand">&</div>
+
+      <div class="person">
+        <div class="person-name">Ulfa Siti Nuraini</div>
+        <p class="parents">Putri dari Bapak Ali<br> & Ibu Tatuk Eko Sihwinantu</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN SECTION -->
+  <section style="background-color: #f5f0eb;">
+    <p class="section-title">Menghitung Hari</p>
+    <h2>Menuju Hari Bahagia</h2>
+    
+    <div class="timer-grid">
+      <div class="timer-box">
+        <span id="days">00</span>
+        <label>Hari</label>
+      </div>
+      <div class="timer-box">
+        <span id="hours">00</span>
+        <label>Jam</label>
+      </div>
+      <div class="timer-box">
+        <span id="minutes">00</span>
+        <label>Menit</label>
+      </div>
+      <div class="timer-box">
+        <span id="seconds">00</span>
+        <label>Detik</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT DETAILS SECTION -->
+  <section>
+    <p class="section-title">Waktu & Lokasi</p>
+    <h2>Rangkaian Acara</h2>
+
+    <div class="event-card">
+      <h3>Akad Nikah</h3>
+      <p><strong>Waktu:</strong> 07.00 WIB - Selesai</p>
+      <p><strong>Lokasi:</strong> Krajan, RT 003, RW 002,</p>
+      <p>Sumbertengah, Binakal, Bondowoso</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Resepsi Pernikahan</h3>
+      <p><strong>Waktu:</strong> 13.00 - 15.00 WIB</p>
+      <p><strong>Lokasi:</strong> Krajan, RT 003, RW 002,</p>
+      <p>Sumbertengah, Binakal, Bondowoso</p>
+      
+      <a href="https://maps.app.goo.gl/G8bQ6LWoaPRJTLnm8" target="_blank" class="btn">Buka Google Maps</a>
+    </div>
+  </section>
+
+  <!-- RSVP SECTION -->
+  <section style="background-color: #f5f0eb;">
+    <p class="section-title">Konfirmasi Kehadiran</p>
+    <h2>RSVP</h2>
+
+    <form id="rsvpForm">
+      <div>
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" required placeholder="Masukkan nama Anda">
+      </div>
+      
+      <div>
+        <label for="status">Konfirmasi Kehadiran</label>
+        <select id="status">
+          <option value="Hadir">Hadir</option>
+          <option value="Ragu-ragu">Ragu-ragu</option>
+          <option value="Tidak Hadir">Tidak Hadir</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">Ucapan & Doa</label>
+        <textarea id="message" rows="4" placeholder="Tuliskan ucapan selamat..."></textarea>
+      </div>
+
+      <button type="button" onclick="sendRSVP()" class="btn" style="border:none; cursor:pointer;">Kirim Konfirmasi</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Terima kasih atas doa dan restu Anda.</p>
+    <p style="margin-top: 0.5rem; font-weight: 600;">Azmi & Ulfa</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Target Tanggal Pernikahan (Tahun, Bulan-1, Tanggal, Jam, Menit)
+    const weddingDate = new Date(2026, 11, 05, 07, 00, 00).getTime();
+
+    const countdown = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+      document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+      document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+      document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.querySelector(".timer-grid").innerHTML = "<p>Acara Telah Berlangsung</p>";
+      }
+    }, 1000);
+
+    // Fungsi Kirim RSVP via WhatsApp
+    function sendRSVP() {
+      const name = document.getElementById("name").value;
+      const status = document.getElementById("status").value;
+      const message = document.getElementById("message").value;
+      const phoneNumber = "628983784942"; // Ganti dengan nomor WA Anda
+
+      if (!name) {
+        alert("Mohon isi nama Anda.");
+        return;
+      }
+
+      const text = `Halo, saya *${name}*.\nKonfirmasi Kehadiran: *${status}*\n\nUcapan:\n"${message}"`;
+      const encodedText = encodeURIComponent(text);
+      
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank');
+    }
+  </script>
+</body>
+</html>
